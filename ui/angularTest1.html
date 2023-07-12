@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<title>Angular JS Examples</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div ng-app="chatbox" class="container" ng-controller="ChatController as chatCtrl">
+		<div class="row">
+			<div class="container-fluid col col-md-4 col-md-offset-4 main-panel col-sm-12">
+				<div class="chat-panel">
+					<ul class="message-box">
+						<li class="message" ng-repeat="msg in chatCtrl.chats" ng-class="{'user-message':msg.person ,'bot-message':!msg.person}">{{msg.message}}</li>
+					</ul>
+				</div>
+				<div class="fixed">
+					<input type="text" name="text" placeholder="Enter Message" ng-model="inputValue">
+					<button><img ng-src="C:\Users\nap1228\Desktop\rpm\send.png" height="50px" width="50px" ng-click="chatCtrl.insert(inputValue)" /></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+	<script src="app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquer-ui.min.js"></script>
+</body>
+
+</html>
